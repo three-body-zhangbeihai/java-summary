@@ -89,15 +89,15 @@ private static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;
 >
 > 网络传输用的很正常，并没有出现空值。
 
-原来：`ArrayList`在序列化的时候会调用**`writeObject()`**方法，将**`size`**和**`element`**写入
+原来：`ArrayList`在序列化的时候会调用 **`writeObject()`** 方法，将 **`size`** 和 **`element`** 写入
 
-**`ObjectOutputStream`**；反序列化时调用**`readObject()`**，从**`ObjectInputStream`**获取**`size`**和**`element`**，再
+**`ObjectOutputStream`** ；反序列化时调用 **`readObject()`** ，从 **`ObjectInputStream`** 获取 **`size`** 和 **`element`** ，再
 
-恢复到**`elementData`**。
+恢复到 **`elementData`** 。
 
 <br>
 
-> 那为什么不直接用**elementData**来序列化，而采用上诉的方式来实现序列化呢？
+> 那为什么不直接用 **`elementData`** 来序列化，而采用上诉的方式来实现序列化呢？
 
 原因在于`elementData`是一个**缓存数组**，它通常会**预留一些容量**，等**容量不足**时再**扩充容量**，那么有些空间可能
 
