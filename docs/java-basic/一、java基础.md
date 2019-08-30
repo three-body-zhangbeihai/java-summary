@@ -131,17 +131,17 @@ round(): 取整方法，加0.5，进行下取整
 
 **2. 可变与不可变**	
 
-**String: **
+**String**
 
 ​	不可变类： 创建之后，字符串不可改变**(拼接字符串相当于重新创建一个)**
 
-**StringBuffer,StringBuilder: **
+**StringBuffer, StringBuilder**:
 
 ​	可变类，继承自AbstractStringBuilder类，底层用字符数组保存字符串
 <br>
 **3. 初始化方式**
 
-**String **
+**String**
 
 ​	构造方法： String str = new String("hello");或 
 
@@ -175,8 +175,8 @@ round(): 取整方法，加0.5，进行下取整
 <br>
 **6. 是否线程安全**
 
-**效率**
-       StringBuilder  >  StringBuffer  > String<br
+**效率**<br>
+StringBuilder  >  StringBuffer  > String<br
 
 **安全**
 
@@ -213,7 +213,7 @@ sout(sb.reserver());
 
 **length()**：返回字符串长度。
 
-**toLowerCase()**将字符串转成小写字母。
+**toLowerCase()**:将字符串转成小写字母。
 
 **toUpperCase()**：将字符串转成大写字符。
 
@@ -262,7 +262,8 @@ abstract class Cat {
 
 抽象类的子类用 extends 继承，接口必须用implements 实现
 
-**构造函数 **<br>
+**构造函数**
+<br>
 
 抽象类可以有构造函数
 
@@ -299,6 +300,7 @@ abstract class Cat {
 字符流；
 
 字节流
+<br>
 **字符流和字节流区别**<br>
 
 字节流按 8 位传输以字节为单位输入输出数据，
