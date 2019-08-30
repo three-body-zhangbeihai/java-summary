@@ -8,13 +8,13 @@
 
 ## 一、 java 容器思维导图
 
-![image](images/java集合类思维导图.png)
+![image](https://github.com/wenhuohuo/java-summary/blob/master/images/java集合类思维导图.png)
 
 
 
 ## 二、Collection总览
 
-![image](images/collection导图.png)
+![image](https://github.com/wenhuohuo/java-summary/blob/master/images/collection导图.png)
 
 
 
