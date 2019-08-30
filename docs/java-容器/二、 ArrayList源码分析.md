@@ -273,7 +273,7 @@ private void ensureExplicitCapacity(int minCapacity) {
 
 <br>
 
-**库容的具体方法**
+**扩容的具体方法**
 
 ```java
 private void grow(int minCapacity) {
@@ -338,7 +338,7 @@ public static void arraycopy(Object src, int srcPos, Object dest, int destPos, i
 
 **图示：**
 
-![image](images/ArrayList添加数据图解.png)
+![image](https://github.com/wenhuohuo/java-summary/blob/master/images/ArrayList添加数据图解.png)
 
 <br><br>
 
