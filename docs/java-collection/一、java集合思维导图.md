@@ -4,4 +4,4 @@
 
 <br>
 
-![image](https://github.com/wenhuohuo/images/java集合类思维导图.png)
+![image](https://github.com/wenhuohuo/java-summary/blob/master/images/java集合类思维导图.png)
