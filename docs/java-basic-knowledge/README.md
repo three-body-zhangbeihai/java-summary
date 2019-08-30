@@ -85,30 +85,30 @@ int是 32 位。 强转，会导致高24位被丢弃。
 ## 9. java中的操作字符串类，有何区别？
 **1. String, StringBuffer, StringBuilder**
 
-**2. 可变与不可变**
-	String: 不可变类： 创建之后，字符串不可改变(拼接相当于重新创建一个)
+**2. 可变与不可变**<br>
+	String: 不可变类： 创建之后，字符串不可改变(拼接相当于重新创建一个)<br>
 	StringBuffer,StringBuilder: 可变类，继承自AbstractStringBuilder类，底层用字符数组保存字符串
 	
-**3. 初始化方式**
+**3. 初始化方式**<br>
 	String 
 		构造方法： String str = new String("hello");或 
-		直接赋值： String str = "hello";
+		直接赋值： String str = "hello";<br>
 	StringBuffer
 		构造方法： StringBuffer sb = new StringBuffer("hello")
 		
-**4. 字符串修改方式**
-	String：底层：new StringBuffer(str) -->  append(), --> toString()
+**4. 字符串修改方式**<br>
+	String：底层：new StringBuffer(str) -->  append(), --> toString()<br>
 	效率：String修改有额外操作，效率低。StringBuffer，StringBuilder效率高
 	
-**5. 是否实现equals 和  hashCode方法**
+**5. 是否实现equals 和  hashCode方法**<br>
 	equals
-		String实现了equals方法，StringBuffer，StringBuilder没有
+		String实现了equals方法，StringBuffer，StringBuilder没有<br>
 	hashCode
 		String实现hashCode，StringBuffer，StringBuilder没有
 		
-**6. 是否线程安全**
+**6. 是否线程安全**<br>
 	效率
-		StringBuilder  >  StringBuffer  > String
+		StringBuilder  >  StringBuffer  > String<br>
 	安全
 		StringBuffer加锁，是线程安全的。
 		单线程选 StringBuilder，多线程，选 StringBuffer。
