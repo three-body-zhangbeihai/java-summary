@@ -57,14 +57,17 @@ equals本质是==，对于引用类型，比较的是内存地址，但String重
 2. final 修饰的方法不能被重写。
 3. final 修饰的变量叫常量，常量必须初始化，初始化之后值就不能被修改。
 <br>
+
 ## 5. java 中的 Math.round(-1.5) 等于多少？
 round(): 取整方法，加0.5，进行下取整
 <br>
+
 ## 6. java的数据类型
 1. 基础类型 8 种
 	byte、boolean、char、short、int、float、long、double
 2. 引用数据类型：
 <br>
+
 ## 7. int和Integer
 1. 区别
 	1. Integer是int的包装类型，在拆箱和装箱中，二者自动转换。
