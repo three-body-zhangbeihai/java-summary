@@ -31,22 +31,20 @@
 	  1. 基本类型的== ：比较值是否相同
 	  2. 引用类型的== ：比较的引用是否相同
 ### equals
-    **(1)**
-	  1. 默认情况是引用比较
+    1. 默认情况是引用比较
     2. 很多类，如String，Integer 重写了equals方法，变成值比较
-    **(2)**
-	equals本质是 == :
+    
   ```
+  equals本质是 == :
   public boolean equals(Object obj) {
      return (this == obj);
   }
   ```
-    **(3)**
-	两个String类型（引用）用equals比较，相同原因：
+  两个String类型（引用）用equals比较，相同原因：
   equals本质是==，对于引用类型，比较的是内存地址，但String重写equals方法，变成值的比较
-	**底层代码原理：**
-    1. 判断是否是String类型
-    2. 是，取出两个对象的值，放到数组中，循环比较每一个字符，有不同的，返回false，全部相同，返回true
+  **底层代码原理：**
+  1. 判断是否是String类型
+  2. 是，取出两个对象的值，放到数组中，循环比较每一个字符，有不同的，返回false，全部相同，返回true
 
 
 ##  3. 两个对象的 hashCode()相同，则 equals()也一定为 true吗？
