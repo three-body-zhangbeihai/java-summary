@@ -26,7 +26,7 @@
 
 **双向链表结构：**
 
-![image](images/双向链表.png)
+![image](https://github.com/wenhuohuo/java-summary/blob/master/images/双向链表.png)
 
 <br>
 
@@ -38,7 +38,7 @@
 
 **LinkedList的继承关系图：**
 
-![image](images/LinkedList继承关系.png)
+![image](https://github.com/wenhuohuo/java-summary/blob/master/images/LinkedList继承关系.png)
 
 <br>
 
@@ -406,7 +406,7 @@ void linkBefore(E e, Node<E> succ) {
 
 **图示**：
 
-![image](images/LinkedList在指定位置插入结点.png)
+![image](https://github.com/wenhuohuo/java-summary/blob/master/images/LinkedList在指定位置插入结点.png)
 
 <br>
 
@@ -880,7 +880,10 @@ private class ListItr implements ListIterator<E> {
 
 可以用 **`listIterator(int index)`** 在指定位置循环遍历过程中配合其他方法做 **增、删、改、查。**
 
-
-
+<br>
+<br>
+<h2>参考</h2>
+<a href="https://mp.weixin.qq.com/s/nzHv1mcOr17lAt9T18X0xg">从源码角度彻底搞懂LinkedList</a>
+<a href="https://mp.weixin.qq.com/s/FcTVC7rcq1GXxXa5yySu9w">面试必会之LinkedList源码分析</a>
 
 
