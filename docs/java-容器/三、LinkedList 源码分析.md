@@ -883,7 +883,7 @@ private class ListItr implements ListIterator<E> {
 <br>
 <br>
 <h2>参考</h2>
-<a href="https://mp.weixin.qq.com/s/nzHv1mcOr17lAt9T18X0xg">从源码角度彻底搞懂LinkedList</a>
+<a href="https://mp.weixin.qq.com/s/nzHv1mcOr17lAt9T18X0xg">从源码角度彻底搞懂LinkedList</a><br>
 <a href="https://mp.weixin.qq.com/s/FcTVC7rcq1GXxXa5yySu9w">面试必会之LinkedList源码分析</a>
 
 
