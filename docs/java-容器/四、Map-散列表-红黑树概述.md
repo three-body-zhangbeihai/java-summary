@@ -12,7 +12,7 @@
 
 ### 1.1Map关系图
 
-![image](images/map关系图.png)
+![image](https://github.com/wenhuohuo/java-summary/blob/master/images/map关系图.png)
 
 <br>
 
@@ -86,7 +86,7 @@
 
 **散列表**：
 
-![image](images/散列表.png)
+![image](https://github.com/wenhuohuo/java-summary/blob/master/images/散列表.png)
 
 <br>
 
@@ -135,19 +135,19 @@
 
 **图示**:
 
-![image](images/二叉查找树.jpg)
+![image](https://github.com/wenhuohuo/java-summary/blob/master/images/二叉查找树.jpg)
 
 <br>
 
 **查找10**：
 
-![image](images/二叉查找树-查找10.jpg)
+![image](https://github.com/wenhuohuo/java-summary/blob/master/images/二叉查找树-查找10.jpg)
 
 <br>
 
 **普通二叉查找树存在的问题。**
 
-![image](images/二叉查找树存在的问题.png)
+![image](https://github.com/wenhuohuo/java-summary/blob/master/images/二叉查找树存在的问题.png)
 
 
 
@@ -173,7 +173,7 @@
 
 **图示：**
 
-![image](images/红黑树图.jpg)
+![image](https://github.com/wenhuohuo/java-summary/blob/master/images/红黑树图.jpg)
 
 <br>
 
