@@ -172,6 +172,7 @@
 
 <br>
 **图示**：
+<br>
 ![image](https://github.com/wenhuohuo/java-summary/blob/master/images/红黑树图.jpg)
 <br>
 
