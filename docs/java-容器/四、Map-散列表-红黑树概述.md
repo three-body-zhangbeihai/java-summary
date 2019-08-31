@@ -146,6 +146,7 @@
 <br>
 
 **普通二叉查找树存在的问题。**
+<br>
 
 ![image](https://github.com/wenhuohuo/java-summary/blob/master/images/二叉查找树存在的问题.png)
 
@@ -171,7 +172,7 @@
 
 <br>
 **图示**：
-![image]("https://github.com/wenhuohuo/java-summary/blob/master/images/红黑树图.jpg")
+![image](https://github.com/wenhuohuo/java-summary/blob/master/images/红黑树图.jpg)
 <br>
 
 **红黑树可以解决上述的问题，主要通过下面两个方法。**
