@@ -10,7 +10,7 @@
 
 ### 1. 1 HashMap 继承关系
 
-![image](images/HashMap继承图.jpg)
+![image](https://github.com/wenhuohuo/java-summary/blob/master/images/HashMap继承图.jpg)
 
 <br>
 
@@ -38,7 +38,7 @@ HashMap**非线程安全**，即任一时刻可以有多个线程同时写HashMa
 
 **图示**：
 
-![image](images/HashMap的底层结构.png)
+![image](https://github.com/wenhuohuo/java-summary/blob/master/images/HashMap的底层结构.png)
 
 <br>
 
@@ -280,7 +280,7 @@ map.put("a", "A");
 
 **图示**：
 
-![image](images/hash碰撞.jpg)
+![image](https://github.com/wenhuohuo/java-summary/blob/master/images/hash碰撞.jpg)
 
 <br>
 
@@ -417,7 +417,7 @@ public native int hashCode();
 
 比较小的时候，也能保证考虑到高低Bit都参与到Hash的计算中，同时不会有太大的开销。
 
-![image](images/HashMap高位参与运算.png)
+![image](https://github.com/wenhuohuo/java-summary/blob/master/images/HashMap高位参与运算.png)
 
 <br>
 
@@ -431,7 +431,7 @@ public native int hashCode();
 
 **首先，先看put方法 的流程图**：
 
-![image](images/HashMap的put方法流程图.png)
+![image](https://github.com/wenhuohuo/java-summary/blob/master/images/HashMap的put方法流程图.png)
 
 <br>
 
@@ -579,7 +579,7 @@ void resize(int newCapacity) {
 
 **图示**：
 
-![image](images/HashMap-1.7版本插入元素流程图.jpg)
+![image](https://github.com/wenhuohuo/java-summary/blob/master/images/HashMap-1.7版本插入元素流程图.jpg)
 
 <br>
 
@@ -591,9 +591,9 @@ void resize(int newCapacity) {
 
 | 1                                               | 2                                               |
 | ----------------------------------------------- | ----------------------------------------------- |
-| ![image](images/HashMap-1.7版本扩容流程图1.jpg) | ![image](images/HashMap-1.7版本扩容流程图2.jpg) |
+| ![image](https://github.com/wenhuohuo/java-summary/blob/master/images/HashMap-1.7版本扩容流程图1.jpg) | ![image](https://github.com/wenhuohuo/java-summary/blob/master/images/HashMap-1.7版本扩容流程图2.jpg) |
 | 3                                               | 4                                               |
-| ![image](images/HashMap-1.7版本扩容流程图3.jpg) | ![image](images/HashMap-1.7版本扩容流程图4.jpg) |
+| ![image](https://github.com/wenhuohuo/java-summary/blob/master/images/HashMap-1.7版本扩容流程图3.jpg) | ![image](https://github.com/wenhuohuo/java-summary/blob/master/images/HashMap-1.7版本扩容流程图4.jpg) |
 
 <br>
 
@@ -610,7 +610,7 @@ void resize(int newCapacity) {
 
 **图示**：
 
-![image](C:\Users\hasee\Desktop\总结的文章\java容器\images\HashMap-1.7版本扩容流程图-索引在不同位置.png)
+![image](https://github.com/wenhuohuo/java-summary/blob/master/images/HashMap-1.7版本扩容流程图-索引在不同位置.png)
 
 <br>
 
@@ -628,15 +628,15 @@ key2两种key确定索引位置的示例，图（b）表示扩容后key1和key2�
 
 key1对应的哈希与高位运算结果。
 
-![img](C:\Users\hasee\Desktop\总结的文章\java容器\images\HashMap-1.8版本扩容-哈希与高位运算图.png)
+![image](https://github.com/wenhuohuo/java-summary/blob/master/images/HashMap-1.8版本扩容-哈希与高位运算图.png)
 
 元素在重新计算hash之后，因为n变为2倍，那么n-1的mask范围在高位多1bit(红色)，因此新的index就会发生这样的变化：
 
-![img](C:\Users\hasee\Desktop\总结的文章\java容器\images\HashMap-1.8版本扩容-哈希与高位运算图2.png)
+![image](https://github.com/wenhuohuo/java-summary/blob/master/images/HashMap-1.8版本扩容-哈希与高位运算图2.png)
 
 因此，我们在扩充HashMap的时候，不需要像JDK1.7的实现那样重新计算hash，只需要看看原来的hash值新增的那个bit是1还是0就好了，是0的话索引没变，是1的话索引变成“原索引+oldCap”，可以看看下图为16扩充为32的resize示意图：
 
-![img](C:\Users\hasee\Desktop\总结的文章\java容器\images\HashMap-1.8版本扩容机制图.png)
+![image](https://github.com/wenhuohuo/java-summary/blob/master/images/HashMap-1.8版本扩容机制图.png)
 
 **巧妙之处**：
 
@@ -782,7 +782,7 @@ public class HashMapInfiniteLoop {
 
 行resize。结果如下图。
 
-![img](images/HashMap-1.7版本环形链表演示图1.png)
+![image](https://github.com/wenhuohuo/java-summary/blob/master/images/HashMap-1.7版本环形链表演示图1.png)
 
 注意，Thread1的 e 指向了key(3)，而next指向了key(7)，其在线程二rehash后，指向了线程二重组后的链表。
 
@@ -790,13 +790,13 @@ public class HashMapInfiniteLoop {
 
 next = e.next导致了next指向了key(3)。
 
-![img](images/HashMap-1.7版本环形链表演示图2.png)
+![image](https://github.com/wenhuohuo/java-summary/blob/master/images/HashMap-1.7版本环形链表演示图2.png)
 
 e.next = newTable[i] 导致 key(3).next 指向了 key(7)。注意：此时的key(7).next 已经指向了key(3)， 环形链表就
 
 这样出现了。
 
-![img](images/HashMap-1.7版本环形链表演示图3.png)
+![img](https://github.com/wenhuohuo/java-summary/blob/master/images/HashMap-1.7版本环形链表演示图3.png)
 
 于是，当我们用线程一调用map.get(11)时，悲剧就出现了——Infinite Loop。
 
