@@ -11,7 +11,7 @@
 
 <h3><a href="https://github.com/wenhuohuo/java-summary/tree/master/docs/java-jvm">JVM</a></h3><br>
 
-- <a href="https://github.com/wenhuohuo/java-summary/blob/master/docs/java-jvm/1.%20Java%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA%E5%9F%9F.md">Java运行时数据区域</a><br>
+- <a href="https://github.com/wenhuohuo/java-summary/blob/master/jvm/1.%20Java%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA%E5%9F%9F.md">Java运行时数据区域</a><br>
 
 - <a href="https://github.com/wenhuohuo/java-summary/blob/master/docs/java-jvm/2.%20%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E7%AE%97%E6%B3%95.md">垃圾回收算法</a><br>
 
