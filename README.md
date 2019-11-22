@@ -15,7 +15,7 @@
 - [内存分配和回收策略](jvm/4.内存分配和回收策略.md)
 - [虚拟机工具](jvm/6.虚拟机工具.md)
 - [class文件结构](jvm/7.class文件结构.md)
-- [虚拟机类加载机制](jvm/9.虚拟机加载机制.md)
+- [虚拟机类加载机制](jvm/9.虚拟机类加载机制.md)
 - [类加载器和双亲委派模型](jvm/10.类加载器和双亲委派模型.md)
 - [GC参数总结](jvm/12.GC参数总结.md)
 - [(转载)Java的强引用、弱引用、软引用、虚引用](jvm/20.(转载)Java的强引用、弱引用、软引用、虚引用.md)
@@ -96,7 +96,7 @@
   - [Java线程基础](java并发/JMM内存模型/2.Java线程基础.md)
   - [JMM内存模型和volatile缓存一致性](java并发/JMM内存模型/3.JMM内存模型和volatile缓存一致性.md)
   - [原子性、可见性、有序性](java并发/JMM内存模型/4.原子性、可见性、有序性.md)
-  - [重排序 happens-before](java并发/JMM内存模型/5.重排序和happens-before.md)
+  - [重排序和happens-before](java并发/JMM内存模型/5.重排序和happens-before.md)
 
 - ### 并发包之collections容器
 
@@ -110,12 +110,12 @@
 
   - #### 并发Queue
 
-    - [并发队列概述](Java并发/并发包之collections容器/并发Queue/1.并发队列概述.md)
-    - [ArrayBlockingQueue源码分析](Java并发/并发包之collections容器/并发Queue/2.ArrayBlockingQueue源码分析.md)
-    - [PriorityBlockingQueue源码分析](Java并发/并发包之collections容器/并发Queue/3.PriorityBlockingQueue源码分析.md)
-    - [ConcurrentLinkedQueue源码分析](Java并发/并发包之collections容器/并发Queue/ConcurrentLinkedQueue源码分析.md)
-    - [DelayQueue源码分析](Java并发/并发包之collections容器/并发Queue/DelayQueue源码分析.md)
-    - [LinkedBlockingQueue源码分析](Java并发/并发包之collections容器/并发Queue/LinkedBlockingQueue源码分析.md)
+    - [并发队列概述](java并发/并发包之collections容器/并发Queue/1.并发队列概述.md)
+    - [ArrayBlockingQueue源码分析](java并发/并发包之collections容器/并发Queue/2.ArrayBlockingQueue源码分析.md)
+    - [PriorityBlockingQueue源码分析](java并发/并发包之collections容器/并发Queue/3.PriorityBlockingQueue源码分析.md)
+    - [ConcurrentLinkedQueue源码分析](java并发/并发包之collections容器/并发Queue/ConcurrentLinkedQueue源码分析.md)
+    - [DelayQueue源码分析](java并发/并发包之collections容器/并发Queue/DelayQueue源码分析.md)
+    - [LinkedBlockingQueue源码分析](java并发/并发包之collections容器/并发Queue/LinkedBlockingQueue源码分析.md)
 
 - ### 并发设计模式
 
