@@ -9,8 +9,8 @@
 
 <br>
 
-- [Java 运行时数据区域](/jvm/Java运行时数据区域.md)
-- [垃圾回收算法](/jvm/垃圾回收算法.mc)
+- [Java 运行时数据区域](https://github.com/wenhuohuo/java-summary/blob/master/jvm/1.Java运行时数据区域.md)
+- [垃圾回收算法](/jvm/2.垃圾回收算法.mc)
 - [内存分配和回收策略](/jvm/内存分配和回收策略.mc)
 - [虚拟机工具](/jvm/虚拟机工具].md)
 - [class文件结构](/jvm/class文件结构.md)
