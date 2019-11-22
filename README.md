@@ -23,15 +23,12 @@
 
 ## mysql
 
-<<<<<<< HEAD
 - [mysql各种连接查询](mysql/mysql各种连接查询.md)
 - [MySQL事务](mysql/MySQL事务.md)
 - [MySQL引擎](mysql/MySQL引擎.md)
 - [MySQL索引](mysql/ MySQL索引.md)
 - [MySQL索引底层数据结构](mysql/MySQL索引底层数据结构.md)
-=======
 - <a href="https://github.com/wenhuohuo/java-summary/blob/master/jvm/1.%20Java%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA%E5%9F%9F.md">Java运行时数据区域</a><br>
->>>>>>> aac8593292ed28ea168b9837710ef27e097d98b0
 
 <br>
 
@@ -181,11 +178,3 @@
 ## pyspider
 
 - [pyspider](pyspider/pyspider.md)
-
-
-
-<<<<<<< HEAD
-=======
-- <a href="https://github.com/wenhuohuo/java-summary/blob/master/docs/java%E5%B9%B6%E5%8F%91/%E7%BA%BF%E7%A8%8B%E6%B1%A0/%E7%BA%BF%E7%A8%8B%E6%B1%A0.md">线程池</a><br>
-- <a href="https://github.com/wenhuohuo/java-summary/blob/master/docs/java%E5%B9%B6%E5%8F%91/%E7%BA%BF%E7%A8%8B%E6%B1%A0/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BA%BF%E7%A8%8B%E6%B1%A0.md">自定义线程池</a><br>
->>>>>>> aac8593292ed28ea168b9837710ef27e097d98b0
