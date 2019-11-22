@@ -60,7 +60,7 @@
 
 - [TCP和IP](http/1.TCP和IP.md)
 - [与HTTP关系密切的协议：IP、TCP和DNS](http/2.与HTTP关系密切的协议：IP、TCP和DNS.md)
-- [URI 、URL、URN](http/3.URI 、 URL、 URN.md)
+- [URI 、URL、URN](http/3.URI 、URL、URN.md)
 - [http的连接](http/4.http的连接.md)
 - [Http状态码](http/5.Http状态码.md)
 - [Http首部](http/6.Http首部.md)
@@ -96,7 +96,7 @@
   - [Java线程基础](java并发/JMM内存模型/2.Java线程基础.md)
   - [JMM内存模型和volatile缓存一致性](java并发/JMM内存模型/3.JMM内存模型和volatile缓存一致性.md)
   - [原子性、可见性、有序性](java并发/JMM内存模型/4.原子性、可见性、有序性.md)
-  - [重排序 happens-before](java并发/JMM内存模型/5.重排序 happens-before.md)
+  - [重排序 happens-before](java并发/JMM内存模型/5.重排序和happens-before.md)
 
 - ### 并发包之collections容器
 
