@@ -9,15 +9,16 @@
 
 <br>
 
-- [Java 运行时数据区域](https://github.com/wenhuohuo/java-summary/blob/master/jvm/1.Java运行时数据区域.md)
-- [垃圾回收算法](/jvm/2.垃圾回收算法.mc)
-- [内存分配和回收策略](/jvm/内存分配和回收策略.mc)
-- [虚拟机工具](/jvm/虚拟机工具].md)
-- [class文件结构](/jvm/class文件结构.md)
-- [虚拟机类加载机制](/jvm/虚拟机加载机制.md)
-- [类加载器和双亲委派模型](/jvm/类加载器和双亲委派模型.mc)
-- [GC参数总结](/jvm/GC参数总结.md)
-- [(转载)Java的强引用、弱引用、软引用、虚引用](/jvm/(转载)Java的强引用、弱引用、软引用、虚引用.md)
+- [Java 运行时数据区域](jvm/1.Java运行时数据区域.md)
+- [垃圾回收算法](jvm/2.垃圾回收算法.md)
+- [垃圾收集器](jvm/3.垃圾收集器.md)
+- [内存分配和回收策略](jvm/4.内存分配和回收策略.md)
+- [虚拟机工具](jvm/6.虚拟机工具.md)
+- [class文件结构](jvm/7.class文件结构.md)
+- [虚拟机类加载机制](jvm/9.虚拟机加载机制.md)
+- [类加载器和双亲委派模型](jvm/10.类加载器和双亲委派模型.md)
+- [GC参数总结](jvm/12.GC参数总结.md)
+- [(转载)Java的强引用、弱引用、软引用、虚引用](jvm/20.(转载)Java的强引用、弱引用、软引用、虚引用.md)
 
 <br>
 
@@ -28,7 +29,6 @@
 - [MySQL引擎](mysql/MySQL引擎.md)
 - [MySQL索引](mysql/ MySQL索引.md)
 - [MySQL索引底层数据结构](mysql/MySQL索引底层数据结构.md)
-- <a href="https://github.com/wenhuohuo/java-summary/blob/master/jvm/1.%20Java%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA%E5%9F%9F.md">Java运行时数据区域</a><br>
 
 <br>
 
