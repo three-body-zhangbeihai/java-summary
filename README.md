@@ -169,7 +169,9 @@
 
 - [网络IO模型](network_programming/网络IO模型.md)
 - [BIO](network_programming/BIO.md)
-- 
+- [NIO中的Buffer](network_programming/NIO中的Buffer.md)
+- [NIO](network_programming/NIO.md)
+- [AIO](networ_programming/AIO.md)
 
 <br>
 
