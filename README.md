@@ -102,6 +102,12 @@
   - [原子性、可见性、有序性](java并发/JMM内存模型/4.原子性、可见性、有序性.md)
   - [重排序和happens-before](java并发/JMM内存模型/5.重排序和happens-before.md)
 
+- ### 并发之tools限制
+
+  - [CountDownLatch](java并发/并发包之tools限制/CountDownLatch.md)
+  - [Semaphore](java并发/并发包之tools限制/Semaphore.md)
+  - [CyclicBarrier](java并发/并发包之tools限制/CyclicBarrier.md)
+
 - ### 并发包之collections容器
 
   - #### 并发list、set
