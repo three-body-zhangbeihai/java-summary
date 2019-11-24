@@ -90,6 +90,12 @@ Selector模式：当IO事件（Channel）注册到Selector后，Selector会分�
 
 <br>
 
+## NIO模型
+
+![image](images/NIO通信模型.png)
+
+<br>
+
 ## 示例代码
 
 **Client:**
@@ -324,4 +330,3 @@ public class Server implements Runnable{
 
 
 
-  
