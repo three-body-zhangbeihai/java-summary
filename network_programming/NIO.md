@@ -6,7 +6,7 @@
 
 ## 概述
 
-**NIO (New I/O):** NIO是一种 **同步非阻塞** 的I/O模型，在Java 1.4 中引入了NIO框架，对应 java.nio 包，提供了 **Channel , Selector，Buffer** 等抽象。
+**NIO (New I/O):** NIO是一种 **同步非阻塞** 的I/O模型，在Java 1.4 中引入了NIO框架，对应 java.nio 包，提供了 **Channel , Selector，Buffer** 等抽象。NIO基于Reactor。
 
 NIO中的N可以理解为Non-blocking，不单纯是New。它支持面向缓冲的，基于**通道的I/O操作方法**。
 
@@ -18,7 +18,7 @@ NIO提供了与传统BIO模型中的 `Socket` 和 `ServerSocket` 相对应的  *
 
 **对于高负载、高并发的（网络）应用，应使用 NIO 的非阻塞模式来开发**。
 
-常用我们更乐意叫做 Non-Blocking IO。
+
 
 <br>
 
@@ -119,7 +119,6 @@ public class Client {
 
         //建立缓冲区
         ByteBuffer buffer = ByteBuffer.allocate(1024);
-
         try {
             //打开通道
             sc = SocketChannel.open();
@@ -139,6 +138,17 @@ public class Client {
                 //写出数据
                 sc.write(buffer);
                 //清空缓冲区
+                buffer.clear();
+
+                /* 读服务端的数据 */
+                int readLine = sc.read(buffer);
+                if(readLine == -1){
+                    break;
+                }
+                buffer.flip();
+                byte[] datas = new byte[buffer.remaining()];
+                buffer.get(datas);
+                System.out.println("from server: " + new String(datas,"UTF-8"));
                 buffer.clear();
             }
         }catch (Exception e){
@@ -164,15 +174,15 @@ public class Client {
 ```java
 package nio;
 
+import sun.reflect.generics.scope.Scope;
+
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.nio.ByteBuffer;
-import java.nio.channels.SelectionKey;
-import java.nio.channels.Selector;
-import java.nio.channels.ServerSocketChannel;
-import java.nio.channels.SocketChannel;
+import java.nio.channels.*;
 import java.util.Iterator;
+import java.util.Scanner;
 
 public class Server implements Runnable{
     //1. 多路复用器Selector（管理所有的Channel）
@@ -180,7 +190,8 @@ public class Server implements Runnable{
     //2. 建立读取缓冲区
     private ByteBuffer readBuffer = ByteBuffer.allocate(1024);
     //3. 建立写缓冲区
-    //private ByteBuffer writeBuffer = ByteBuffer.allocate(1024);
+    private ByteBuffer writeBuffer = ByteBuffer.allocate(1024);
+
     public Server(int port){
         try {
             //1. 打开多路复用器(调用自身静态方法)
@@ -191,7 +202,15 @@ public class Server implements Runnable{
             ssc.configureBlocking(false);
             //4. 绑定地址
             ssc.bind(new InetSocketAddress(port));
-            //5. 把服务器通道注册到多路复用器上，并且监听阻塞事件
+            //5. 把服务器通道注册到多路复用器上，并且监听阻塞事件（ACCEPT）
+            /**
+             * register(Seletor, int)
+             * int --> 状态编码
+             * OP_ACCEPT:连接成功的标记位
+             * OP_READ：可以读取数据的标记
+             * OP_WRITE：可以写入数据的标记
+             * OP_CONNECT：连接建立的标记
+             */
             ssc.register(this.selector,SelectionKey.OP_ACCEPT);
 
             System.out.println("服务器已启动，端口是:" + port + ",等待客户端连接...");
@@ -210,32 +229,46 @@ public class Server implements Runnable{
         while (true){
             try {
                 //1. 必须要让多路复用器开始监听
+                //阻塞方法，当至少一个通道被选中，该方法返回。
                 this.selector.select();
                 //2. 返回多路复用器已经选择的结果集
-                //当客户端的Channel注册到多路复用器上时，会有key注册在上面。
+                //当客户端的Channel注册到多路复用器上时，会有key注册在上面，相当于通道ID
                 Iterator<SelectionKey> keys = this.selector.selectedKeys().iterator();
                 //3. 进行遍历（遍历Channel的所有key）
                 while (keys.hasNext()){
                     //4. 获取一个选择的元素
                     SelectionKey key = keys.next();
-                    //5. 直接从容器中移除就可以了
+                    //5. 将本次要处理的通道从集合中删除，下次循环根据新的通道列表再次执行必要的业务逻辑
                     keys.remove();
 
                     //6. 如果是有效的key
                     if(key.isValid()){
                         //7. 如果是阻塞状态
                         //一开始只有服务端的ServerSocketChannel是阻塞的，那么会执行accept方法
-                        if(key.isAcceptable()){
-                            this.accept(key);
+                        try {
+                            if(key.isAcceptable()){
+                                this.accept(key);
+                            }
+                        }catch (CancelledKeyException cke){
+                            //有异常，断开连接
+                            key.cancel();
                         }
                         //8. 如果为可读状态
-                        if(key.isReadable()){
-                            this.read(key);
+                        try{
+                            if(key.isReadable()){
+                                this.read(key);
+                            }
+                        }catch (CancelledKeyException cke){
+                            key.cancel();
                         }
-                        //9. 写数据
-                        /*if(key.isWritable()){
-                            this.write(key);
-                        }*/
+                        //9. 如果是可写数据
+                        try{
+                            if(key.isWritable()){
+                                this.write(key);
+                            }
+                        }catch (CancelledKeyException cke){
+                            key.cancel();
+                        }
                     }
                 }
             }catch (IOException e){
@@ -244,15 +277,17 @@ public class Server implements Runnable{
         }
     }
 
+
+
     //阻塞状态
     private void accept(SelectionKey key) {
         try {
-            //1. 获取服务通道
+            //1. 获取服务端通道，是注册到Selector上的ServerSocketChannel。
             ServerSocketChannel ssc = (ServerSocketChannel) key.channel();
             //2. 执行阻塞方法
-            //阻塞着，如果有客户端Channel连上，就被监听到，获得一个客户端的SocketChannel了。
+            //阻塞着，当客户端发起请求后返回。此通道和客户端一一对应
             SocketChannel sc = ssc.accept();
-            //3. 设置阻塞模式
+            //3. 设置非阻塞模式
             sc.configureBlocking(false);
             //4. 注册到多路复用器上，并设置读取标识。下一次轮询时就是可读状态了。
             sc.register(this.selector, SelectionKey.OP_READ);
@@ -261,17 +296,20 @@ public class Server implements Runnable{
         }
     }
 
+
     private void read(SelectionKey key) {
         try {
             //1. 清空缓冲区旧的数据
             this.readBuffer.clear();
             //2. 获取之前注册的SocketChannel对象(通过多路复用器上的key来获取）
             SocketChannel sc = (SocketChannel)key.channel();
-            //3. 读取数据
+            //3. 将客户端通道中的数据读取到缓存中
             int count = sc.read(this.readBuffer);
-            //4. 如果没有数据
+            //4. 检查客户端是否写入数据（-1表示通道没有数据）
             if(count == -1){
+                //关闭通道
                 key.channel().close();
+                //关闭连接
                 key.cancel();
                 return;
             }
@@ -284,15 +322,35 @@ public class Server implements Runnable{
             this.readBuffer.get(bytes);
             //8. 打印结果
             String body = new String(bytes).trim();
-            System.out.println("客户端：" + body);
+            System.out.println("from " + sc.getRemoteAddress() + "client: " + body);
 
-            //9. 回写给客户端数据，就是write
-            //这是双向通信。
+            //9.注册通道，标记为写操作，回写给客户端。
+            sc.register(this.selector, SelectionKey.OP_WRITE);
+
         }catch (IOException e){
             e.printStackTrace();
         }
     }
+
+    //写操作
+    private void write(SelectionKey key) {
+        this.writeBuffer.clear();
+        SocketChannel sc = (SocketChannel)key.channel();
+        Scanner reader = new Scanner(System.in);
+        try {
+            System.out.println("给客户端回消息 > ");
+            String line = reader.nextLine();
+            writeBuffer.put(line.getBytes("UTF-8"));
+            writeBuffer.flip();
+            sc.write(writeBuffer);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
+    }
+
 }
+
 ```
 
 <br>
@@ -307,13 +365,7 @@ public class Server implements Runnable{
 6. 将客户端Channel设置为非阻塞状态，并且注册到多路复用器上，设置为可读状态
 7. 那么，下一次Selector轮询时，就是客户端Channel了，都是READ状态，就执行read操作。
 8. read操作是通过Selector的key获得Channel，读取Channel中的数据放到Buffer缓冲区，并解码Buffer。
-9. 加入要应答客户端，那么就将应答消息编码后放入Buffer，调用SocketChannel的write将消息发给客户端。
-
-<br>
-
-### 双向通信
-
-可以对上面代码进行改进，变成双向通信的方式。
+9. 应答客户端，将应答消息编码后放入Buffer，调用SocketChannel的write将消息发给客户端。
 
 <br>
 
