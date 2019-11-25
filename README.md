@@ -102,21 +102,37 @@
   - [原子性、可见性、有序性](java并发/JMM内存模型/4.原子性、可见性、有序性.md)
   - [重排序和happens-before](java并发/JMM内存模型/5.重排序和happens-before.md)
 
+- ## 并发同步处理
+
+  - [Synchronize剖析](java并发/并发同步处理/Synchronized剖析.md)
+  - [AQS]
+  - 乐观锁、悲观锁、重入锁、公平锁、非公平锁、锁的粒度
+  - locks锁：ReentrantLock、ReentrantReadLock、ReentrantWriteLock
+
+  
+
 - ### 并发之tools限制
 
   - [CountDownLatch](java并发/并发包之tools限制/CountDownLatch.md)
   - [Semaphore](java并发/并发包之tools限制/Semaphore.md)
   - [CyclicBarrier](java并发/并发包之tools限制/CyclicBarrier.md)
 
+- ## 并发包之atomic原子
+
+  - atomic类
+  - cas算法乐观锁
+  - Unsafe魔法类
+
 - ### 并发包之collections容器
 
   - #### 并发list、set
 
-    - 
+    - CopyOnWriteList
+    - CopyOnWriteSet
 
   - #### 并发map
 
-    - 
+    - ConcurrentHashMap
 
   - #### 并发Queue
 
