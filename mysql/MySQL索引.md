@@ -24,7 +24,7 @@ MySQL 中索引的存储类型有两种：**BTree** 和 **Hash。**具体和表�
 
 **MyISAM 和 InnoDB** 存储引擎**只支持BTree 索引**；
 
-MEMORY/HEAP 存储引擎可以支持 **Hash和 **BTree** 索引。
+**MEMORY/HEAP** 存储引擎可以支持 **Hash和 BTree** 索引。
 
 <br>
 
@@ -38,7 +38,7 @@ show INDEX from user;
 
 ![image](images/查看user表的索引详情.png)
 
-可以看到使用的索引类型是**BTree**。
+可以看到使用的索引类型是 **BTree**。
 
 <br>
 
@@ -109,7 +109,7 @@ MySQL 使用 **SPATIAL** 关键字进行扩展，使得能够用于创建正规�
 
 1. 频繁作为 **where** 条件的字段
 2. 关联字段可以建索引，比如外键。
-3. 频繁进行**排序**或**分组**，(即 **group by** 或 **order by**)。排序列有多个，可以建立组合索引。
+3. 频繁进行**排序**或**分组**，(即 **order by** 或 **group by**)。排序列有多个，可以建立组合索引。
 
 <br>
 
