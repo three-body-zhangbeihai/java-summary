@@ -18,7 +18,6 @@ CREATE TABLE `a_table` (
   `a_name` varchar(10) DEFAULT NULL,
   `a_part` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
-
 ```
 
 <br>

@@ -32,7 +32,7 @@ JRE：java运行环境
 2. 引用类型的== ：比较的引用是否相同
 ### equals
 1. 默认情况是引用比较
-2. 很多类，如String，Integer 重写了equals方法，变成值比较
+2. 很多类，如String，Integer 重写了equals方法，变成值比较。
 
   ```java
   equals本质是 == :
@@ -54,24 +54,24 @@ public boolean equals(Object anObject) {
         String anotherString = (String)anObject;
         int n = count;
         if (n == anotherString.count) {
-        char v1[] = value;
-        char v2[] = anotherString.value;
-        int i = offset;
-        int j = anotherString.offset;
-        while (n-- != 0) {
-            if (v1[i++] != v2[j++])
-            return false;
-        }
-        return true;
+            char v1[] = value;
+            char v2[] = anotherString.value;
+            int i = offset;
+            int j = anotherString.offset;
+            while (n-- != 0) {
+                if (v1[i++] != v2[j++])
+                return false;
+            }
+        	return true;
         }
     }
     return false;
-    }
+}
 
 **底层代码原理：**
 
-1. 判断是否是String类型
-2. 是，取出两个对象的值，放到数组中，循环比较每一个字符，有不同的，返回false，全部相同，返回true
+1. 判断是否是String类型。
+2. 是，取出两个对象的值，放到数组中，循环比较每一个字符，有不同的，返回false，全部相同，返回true。
 ```
 
 
@@ -102,7 +102,7 @@ round(): 取整方法，加0.5，进行下取整
 
 ## 6. java的数据类型
 1. 基础类型 8 种
-  byte、boolean、char、short、int、float、long、double
+    byte、boolean、char、short、int、float、long、double
 
 2. 引用数据类型：
 
@@ -176,7 +176,7 @@ round(): 取整方法，加0.5，进行下取整
 **6. 是否线程安全**
 
 **效率**
-       StringBuilder  >  StringBuffer  > String<br
+       StringBuilder  >  StringBuffer  > String<br>
 
 **安全**
 
