@@ -207,6 +207,7 @@
   - [3.spring注解-@Conditional](spring/spring注解/3.spring注解-@Conditional.md)
   - [4.spring注解-@Import-实现ImportSelector接口-实现ImportBeanDefinitionRegistrar接口](spring/spring注解/4.spring注解-@Import-实现ImportSelector接口-实现ImportBeanDefinitionRegistrar接口.md)
   - [5.spring注解-@FactoryBean](spring/spring注解/5.spring注解-@FactoryBean.md)
+  - [6.spring注解-AOP注解版](spring/spring注解/6.spring注解-AOP注解版.md)
 
 <br>
 
