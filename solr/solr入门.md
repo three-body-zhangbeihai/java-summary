@@ -41,7 +41,7 @@ Apache Solr是一个功能强大的搜索服务器，它支持REST风格API。
 
 **核心概念**
 
-**Document：每个被索引的文档**
+**Document：每个被索引的文档** 
 
 **Field：文档里的各个属性值**
 
