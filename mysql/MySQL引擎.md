@@ -130,7 +130,8 @@ MySQL 使用 InnoDB 存储 表时，会将 **表的定义** 和 **数据索引**
    【**未提交读**(Read uncommitted)，**已提交读**(Read committed)，**可重复读**(Repeatable read)，**可序列化(可串行化)**(Serializable)】
 
 2. 该引擎还提供了**行级锁**和**外键约束**
-   3. 使用行级锁也不是绝对的，如果在执行一个SQL语句时MySQL不能确定要扫描的范围，InnoDB表同样会锁全表。
+
+   使用行级锁也不是绝对的，如果在执行一个SQL语句时MySQL不能确定要扫描的范围，InnoDB表同样会锁全表。
 3. 它的设计目标是处理大容量数据库系统，它本身其实就是基于MySQL后台的完整数据库系统。
 4. MySQL运行时Innodb会在**内存中建立缓冲池**，用于缓冲**数据和索引**。
 5. 该引擎不支持**FULLTEXT**类型的索引（**不支持全文索引**）。
@@ -209,7 +210,7 @@ MyISAM基于 **ISAM**的存储引擎，并对其扩展。是在 **Web、数据�
 
 [面试宝典系列-mysql引擎Innodb和MyISAM的区别](https://my.oschina.net/suyain/blog/1925807)<br>
 
-《MySQL5.7 从入门到精通》书籍
+《MySQL5.7 从入门到精通》
 
 
 
